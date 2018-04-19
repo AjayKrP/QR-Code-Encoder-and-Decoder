@@ -6,7 +6,7 @@ from email.mime.multipart import MIMEMultipart
 
 
 def send_mail(img_file_name, to):
-    img_file_name = '/home/Asus/PycharmProjects/SIH/' + img_file_name
+    img_file_name = os.getcwd() + img_file_name
     img_data = open(img_file_name, 'rb').read()
     msg = MIMEMultipart()
     msg['Subject'] = 'subject'
@@ -22,10 +22,7 @@ def send_mail(img_file_name, to):
     s.ehlo()
     s.starttls()
     s.ehlo()
-    s.login(msg['From'], '****************')
+    s.login(msg['From'], '--------password-------')
     s.sendmail(msg['From'], msg['To'], msg.as_string())
     s.quit()
 
-
-if __name__=='__main__':
-    send_mail('/home/Asus/PycharmProjects/SIH/static/images/1524135049.png', 'kajay5080@gmail.com')

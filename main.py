@@ -15,11 +15,12 @@ def home_page():
 @app.route('/send_image', methods=['GET', 'POST'])
 def sendImage():
     if request.method == 'GET':
-        email = request.form['email']
-        print(email)
-        image_name = 'static/images/1524135049.png'
-        send_mail(image_name, email)
-        return redirect('/generate')
+         email = request.args.get('email')
+         print(email)
+         image_name = request.args.get('image_name')
+         send_mail(image_name, email)
+         return redirect('/generate')
+
 
 @app.route('/generate', methods=['GET', 'POST'])
 def contact():

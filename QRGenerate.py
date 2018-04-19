@@ -3,7 +3,9 @@ import os
 
 
 def generate_qr_code(text, id):
-    os.chdir('/home/Asus/PycharmProjects/SIH/static/images')
+    path = os.getcwd()
+    print(path)
+    os.chdir(path+'/static/images')
     image = pyqrcode.create(text)
-    image.png(id+'.png')
+    image.png(id+'.png', scale=10*2)
     os.chdir('../')
