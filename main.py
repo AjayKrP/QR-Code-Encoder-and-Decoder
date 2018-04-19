@@ -16,7 +16,8 @@ def contact():
     if request.method == 'POST':
         id = str(int(time.time()))
         generate_qr_code(request.form['text'], id)
-        return render_template('success.html', image_name=id+'.png')
+        path = '/static/images/'+id+'.png'
+        return render_template('success.html', image_name=path)
     elif request.method == 'GET':
         return render_template('form.html')
 

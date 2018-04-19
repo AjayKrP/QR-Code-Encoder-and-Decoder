@@ -1,4 +1,4 @@
-.button {
+.button a{
     display:inline-block;
     color:#444;
     border:1px solid #CCC;
@@ -9,4 +9,18 @@
     max-width: 100px;
     padding: 5px;
     text-align: center;
+}
+
+textarea#styled {
+	width: 600px;
+	height: 120px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+	background-position: bottom right;
+	background-repeat: no-repeat;
+}
+
+.img-responsive {
+    margin: 0 auto;
 }

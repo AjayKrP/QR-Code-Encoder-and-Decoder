@@ -2,13 +2,25 @@
 <html lang="en" xmlns:font-weight="http://www.w3.org/1999/xhtml" xmlns:margin-left="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>QR Code Generator</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" media="all">
+    <link rel="stylesheet" href="/static/css/style.css" media="all">
 </head>
 <body>
-    <h2 style="text-align: center;">QR Code Generetor</h2>
-    <form action = "http://localhost:5000/generate" method = post>
-         <textarea name="text" title="Enter Medicine Name" rows="4" cols="50"></textarea>
-        <input type="submit">
-      </form>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-offset-3 col-md-6 col-sm-6 col-md-offset-3">
+                <h2 class="text-center text-warning">QR Code Generator</h2>
+                <form action = "http://localhost:5000/generate" method = post>
+                     <textarea id="styled" name="text" title="Enter Medicine Name" rows="4" cols="50" required></textarea>
+                    <input type="submit">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
 </body>
 </html>
