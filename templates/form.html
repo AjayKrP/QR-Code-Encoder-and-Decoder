@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:font-weight="http://www.w3.org/1999/xhtml" xmlns:margin-left="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>QR Code Generator</title>
+</head>
+<body>
+    <h2 style="text-align: center;">QR Code Generetor</h2>
+
+    {%  for message in form.texts.errors %}
+        <div>{{message}}</div>
+
+    {%endfor%}
+    <form action = "http://localhost:5000/generate" method = post>
+         <fieldset>
+            <legend>QR Code Form</legend>
+            {{ form.hidden_tag() }}
+            <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+               {{ form.texts.label }}<br>
+               {{ form.texts }}
+               <br>
+               {{ form.submit }}
+            </div>
+
+         </fieldset>
+      </form>
+</body>
+</html>
