@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, flash
-from form import QRForm
+from QRGenerate import generate_qr_code
+import time
 app = Flask(__name__)
 app.secret_key = '_________\/R|_|S|-|/\|_i________'
 
@@ -9,17 +10,15 @@ def home_page():
     if request.method == 'GET':
         return render_template('home.html')
 
+
 @app.route('/generate', methods=['GET', 'POST'])
 def contact():
-    form = QRForm()
     if request.method == 'POST':
-        if form.validate() == False:
-            flash("All fields are required!!!")
-            return render_template('form.html', form = form)
-        else:
-            render_template('success.html')
+        id = str(int(time.time()))
+        generate_qr_code(request.form['text'], id)
+        return render_template('success.html', image_name=id+'.png')
     elif request.method == 'GET':
-        return render_template('form.html', form = form)
+        return render_template('form.html')
 
 
 if __name__ == '__main__':
