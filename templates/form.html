@@ -13,7 +13,8 @@
             <div class="col-sm-offset-3 col-md-6 col-sm-6 col-md-offset-3">
                 <h2 class="text-center text-warning">QR Code Generator</h2>
                 <form action = "http://localhost:5000/generate" method = post>
-                     <textarea id="styled" name="text" title="Enter Medicine Name" rows="4" cols="50" required></textarea>
+                     <textarea onkeyup="getTotalCharacters();"  maxlength="300" id="styled" name="text" title="Enter Medicine Name" rows="4" cols="50" required></textarea>
+                    <span><b><p class="text-right" id="totalChars"></p></b></span>
                     <input type="submit">
                 </form>
             </div>
@@ -22,5 +23,6 @@
 
     <script src="/static/js/jquery.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/index.js"></script>
 </body>
 </html>
