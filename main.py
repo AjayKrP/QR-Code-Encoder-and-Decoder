@@ -26,7 +26,9 @@ def sendImage():
 def contact():
     if request.method == 'POST':
         id = str(int(time.time()))
-        generate_qr_code(request.form['text'], id)
+        doctor_name = 'D:'+ request.form['doctor_name']
+        texts = doctor_name + 'M:'+ request.form['text']
+        generate_qr_code(texts, id)
         path = '/static/images/'+id+'.png'
         return render_template('success.html', image_name=path)
     elif request.method == 'GET':

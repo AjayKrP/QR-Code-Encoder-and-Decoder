@@ -13,8 +13,13 @@
             <div class="col-sm-offset-3 col-md-6 col-sm-6 col-md-offset-3">
                 <h2 class="text-center text-warning">QR Code Generator</h2>
                 <form action = "http://localhost:5000/generate" method = post>
-                     <textarea onkeyup="getTotalCharacters();"  maxlength="300" id="styled" name="text" title="Enter Medicine Name" rows="4" cols="50" required></textarea>
-                    <span><b><p class="text-right" id="totalChars"></p></b></span>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="doctor_name" placeholder="Doctor Name" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" onkeyup="getTotalCharacters();"  maxlength="300" id="styled" name="text" title="Enter Medicine Name"  required></textarea>
+                        <span><b><p class="text-right" id="totalChars"></p></b></span>
+                    </div>
                     <input type="submit">
                 </form>
             </div>
