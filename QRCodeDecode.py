@@ -97,7 +97,7 @@ if __name__ == "__main__":
             if len(result) != 0:
                 str = result[0][0].decode('UTF-8')
                 if len(str):
-                    print(result[0][0].decode('UTF-8'))
+                    print(str)
                     break
             '''
             //////////////////////////////////////////
