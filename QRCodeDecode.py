@@ -90,11 +90,18 @@ if __name__ == "__main__":
             gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
             cv2.imshow('gray', gray)
             result = decode(gray)
+            '''
+            ///////////////////////////////////////
+            Do changes from here
+            '''
             if len(result) != 0:
                 str = result[0][0].decode('UTF-8')
                 if len(str):
                     print(result[0][0].decode('UTF-8'))
                     break
+            '''
+            //////////////////////////////////////////
+            '''
             a, b = 0, 0
             response = res()
             if result:
